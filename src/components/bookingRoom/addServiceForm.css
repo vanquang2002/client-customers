@@ -1,0 +1,77 @@
+/* General Table Styles */
+#custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+
+#custom-table th, #custom-table td {
+  padding: 4px 6px; /* Reduced padding for more compact cells */
+  border: 1px solid #ddd;
+  text-align: center;
+  line-height: 1.2; /* Compact line height */
+  font-size: 14px; /* Slightly smaller font for compactness */
+}
+
+#custom-table tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+#custom-table tbody tr:nth-of-type(even) {
+  background-color: #ffffff;
+}
+
+/* Note Row Styles */
+#note-container {
+  padding: 4px 6px; /* Compact padding */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fdfdfd;
+  display: flex;
+  justify-content: space-between; /* Align content and button inline */
+  align-items: center; /* Vertically align items */
+  line-height: 1.2; /* Compact line height for text */
+  font-size: 14px; /* Match table font size */
+  margin-top: 4px; /* Minimal spacing between rows */
+}
+
+#note-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  white-space: nowrap;
+  flex: 1; /* Fill available space */
+  margin-right: 6px; /* Reduced space between content and button */
+}
+
+#note-content.expanded {
+  white-space: normal; /* Allow wrapping when expanded */
+}
+
+#note-button {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 13px; /* Slightly smaller font for compact look */
+  font-weight: bold;
+  padding: 0;
+  text-decoration: underline;
+  white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Danger Button Styles */
+#delete-button {
+  background-color: #dc3545;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 4px 6px; /* Compact button size */
+  cursor: pointer;
+  font-size: 13px; /* Smaller font size */
+}
+
+#delete-button:hover {
+  background-color: #c82333;
+}

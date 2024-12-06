@@ -1,0 +1,37 @@
+.header {
+  background-color: #81a969; /* Dark blue background */
+  color: #da1884; /* White text color */
+}
+
+.contact-info {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between; /* Ensures text and icons are on opposite sides */
+  align-items: center;
+}
+
+.social-icon {
+  color: white;
+  font-size: 20px;
+  margin-left: 15px; /* Space between icons */
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #da1884; /* Hover effect in the primary color */
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+  }
+}
+
+.py-3 {
+  padding: 0px !important;
+}

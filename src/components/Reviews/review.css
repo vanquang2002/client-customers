@@ -1,0 +1,27 @@
+.service-reviews {
+    margin-top: 30px;
+  }
+  
+  .review-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-card h4 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .review-card p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .rating {
+    font-weight: bold;
+    color: #ff7e01;
+  }
+  

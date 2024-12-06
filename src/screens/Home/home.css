@@ -1,0 +1,167 @@
+ 
+
+  /* Banner image */
+  .banner-image {
+    width: 100%;
+    height: auto;
+    
+    object-fit: cover;
+    margin-bottom: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+   
+  
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  /* Section titles */
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0b2727; /* Dark green primary color */
+    margin-bottom: 20px;
+  }
+  /* styles.css or your specific CSS file */
+img {
+  width: 200px;  /* Set the desired width */
+  height: 300px; /* Set the desired height */
+  object-fit: cover; /* Ensures the images maintain aspect ratio */
+}
+  p {
+    font-size: 1.1rem;
+    color: #6e7074; /* Neutral gray text color */
+    margin-bottom: 30px;
+  }
+  
+  /* Introduction section */
+  #about {
+    padding: 50px 0;
+    background-color: #f4f5f7; /* Light gray background */
+  }
+  
+  #about p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Branches (Hệ thống nhà khách) section */
+  #branches {
+    padding: 50px 0;
+  }
+  
+  #branches .card {
+    border: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Light shadow */
+  }
+  
+  #branches .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
+  }
+  
+  #branches .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  #branches .card-text {
+    font-size: 1rem;
+    color: #6e7074;
+  }
+  
+  #branches .btn-primary {
+    background-color: #ff7e01;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #branches .btn-primary:hover {
+    background-color: #e56d01;
+  }
+  
+  /* Services section */
+  #services {
+    padding: 50px 0;
+    background-color: #f4f5f7; /* Alternate background color */
+  }
+  
+  #services img {
+    
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  
+  #services h4 {
+    font-size: 1.5rem;
+    color: #0b2727;
+    margin-bottom: 15px;
+  }
+  
+  #services p {
+    font-size: 1rem;
+    color: #000000;
+    max-width: 300px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  #tour img{
+    height: 500px
+  }
+  
+  /* News section */
+  #news {
+    padding: 50px 0;
+  }
+  
+  #news .card {
+    border: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  #news .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  #news .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  #news .card-text {
+    font-size: 1rem;
+    color: #6e7074;
+  }
+  
+  #news .btn-primary {
+    background-color: #ff7e01;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #news .btn-primary:hover {
+    background-color: #e56d01;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #0b2727;
+    color: #fff;
+    padding: 30px 0;
+  }
+  
+  footer a {
+    color: #faa935;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #fff;
+  }
+  

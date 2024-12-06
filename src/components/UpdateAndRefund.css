@@ -1,0 +1,151 @@
+/* General styling */
+.booking-details {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.booking-details h2,
+.booking-details h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.booking-details p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Customer Information */
+.customer-info {
+    margin-bottom: 30px;
+}
+
+.customer-info strong {
+    color: #000;
+}
+
+.customer-info p {
+    margin-bottom: 8px;
+}
+
+/* Room Details */
+.room-details {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.room-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.room-details th,
+.room-details td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.room-details th {
+    background-color: #007bff;
+    color: white;
+}
+
+.room-details td {
+    background-color: #fff;
+}
+
+/* Service Details */
+.service-details {
+    margin-top: 30px;
+}
+
+.service-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.service-details th,
+.service-details td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.service-details th {
+    background-color: #28a745;
+    color: white;
+}
+
+.service-details td {
+    background-color: #fff;
+}
+
+/* Notes */
+.service-details tr td:nth-child(5) button {
+    margin: 0 5px;
+    font-size: 14px;
+    padding: 6px 12px;
+    border: none;
+    color: white;
+    background-color: #dc3545;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.service-details tr td:nth-child(5) button:hover {
+    background-color: #c82333;
+}
+
+/* Buttons */
+.checkout-button {
+    margin-top: 20px;
+}
+
+.checkout-button button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-button button:hover {
+    background-color: #0056b3;
+}
+
+.checkout-button button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Highlighting */
+.text-success {
+    color: #28a745;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .customer-info p,
+    .room-details table,
+    .service-details table {
+        font-size: 14px;
+    }
+
+    .checkout-button button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

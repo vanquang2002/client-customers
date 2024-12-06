@@ -1,0 +1,42 @@
+
+
+  /* Button styling */
+  button {
+    background-color: #ff7e01;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+    width: fit-content;
+  }
+  
+  button:hover {
+    background-color: #e66d00;
+    color: #fff;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 1.75rem;
+    }
+  
+    h3 {
+      font-size: 1.25rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  

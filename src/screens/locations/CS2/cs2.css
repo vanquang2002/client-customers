@@ -1,0 +1,38 @@
+.gallery-wrapper {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .big-photo img {
+    height: 300px;
+    margin-right: 10px;
+    object-fit: cover;
+    width: auto;
+  }
+  .big-photo  {
+    height: 300px;
+    margin-bottom: 5px;
+    display: flex
+  }
+  
+  
+  
+  .small-photos {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .small-photos img {
+    width: 106px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  span{
+    margin:10px;
+  }
