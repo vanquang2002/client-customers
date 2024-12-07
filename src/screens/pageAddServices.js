@@ -33,7 +33,7 @@ const PageAddServices = () => {
         e.preventDefault();
         try {
             // Kiểm tra Booking ID hợp lệ
-            const response = await axios.get(`http://localhost:9999/bookings/${bookingId}`);
+            const response = await axios.get(`https://server-j956.onrender.com/bookings/${bookingId}`);
             if (response.data) {
                 setIsValidBooking(true);
                 setSubmittedBookingId(bookingId.trim());
@@ -49,7 +49,7 @@ const PageAddServices = () => {
     // Gửi OTP ngay sau khi Booking ID hợp lệ
     const sendOtp = async () => {
         try {
-            await axios.post(`http://localhost:9999/email/send-otp/${bookingId}`);
+            await axios.post(`https://server-j956.onrender.com/email/send-otp/${bookingId}`);
             setIsOtpSent(true);  // Thông báo đã gửi OTP thành công
             setOtpError(null);   // Xóa thông báo lỗi OTP
         } catch (error) {
@@ -60,7 +60,7 @@ const PageAddServices = () => {
     // Xác nhận OTP
     const handleOtpVerification = async () => {
         try {
-            const response = await axios.post(`http://localhost:9999/email/verify-otp/${bookingId}`, { otp });
+            const response = await axios.post(`https://server-j956.onrender.com/email/verify-otp/${bookingId}`, { otp });
 
             if (response.data.success) {
                 setIsOtpValid(true);  // OTP hợp lệ
