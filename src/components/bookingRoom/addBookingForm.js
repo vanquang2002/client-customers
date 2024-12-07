@@ -202,7 +202,7 @@ const AddBookingForm = forwardRef(({ onBookingCreated, customerID, serviceAmount
             }));
 
             // Create the booking
-            const response = await axios.post('http://localhost:9999/bookings', {
+            const response = await axios.post('https://server-j956.onrender.com/bookings', {
                 ...bookingData,
                 price: finalPrice
             });
@@ -217,7 +217,7 @@ const AddBookingForm = forwardRef(({ onBookingCreated, customerID, serviceAmount
                 setErrorMessage('Không đủ số lượng phòng');
 
                 // Optionally delete the booking if rooms couldn't be reserved
-                await axios.delete(`http://localhost:9999/bookings/${bookingId}`);
+                await axios.delete(`https://server-j956.onrender.com/bookings/${bookingId}`);
                 console.log(`Booking with ID ${bookingId} has been deleted due to insufficient room selection.`);
 
                 return; // Exit the function
