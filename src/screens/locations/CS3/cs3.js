@@ -44,8 +44,8 @@ const CS3 = () => {
     useEffect(() => {
         const fetchTaxesAndRoomCategories = async () => {
             try {
-                const taxResponse = await axios.get('http://localhost:9999/taxes');
-                const roomCategoriesResponse = await axios.get('http://localhost:9999/roomCategories');
+                const taxResponse = await axios.get('https://server-j956.onrender.com/taxes');
+                const roomCategoriesResponse = await axios.get('https://server-j956.onrender.com/roomCategories');
 
                 const defaultTax = taxResponse.data.find(tax => tax.code === '000000');
 
@@ -202,8 +202,8 @@ const CS3 = () => {
             //     const existingOrderRooms = await axios.get(`http://localhost:9999/orderRooms/booking/${bookingId}`);
             //     await handleRoomOrders(existingOrderRooms.data, customerId, bookingId);
             // } else {
-            const customerResponse = await axios.post('http://localhost:9999/customers', customerData);
-            const bookingResponse = await axios.post('http://localhost:9999/bookings', { ...bookingData, price: totalPrice });
+            const customerResponse = await axios.post('https://server-j956.onrender.com/customers', customerData);
+            const bookingResponse = await axios.post('https://server-j956.onrender.com/bookings', { ...bookingData, price: totalPrice });
 
             const newBookingId = bookingResponse.data._id;
             const newCustomerId = customerResponse.data._id;
@@ -230,9 +230,9 @@ const CS3 = () => {
             if (qty > 0) {
                 const existingOrderRoom = existingOrderRooms.find(orderRoom => orderRoom.roomCateId._id === roomCateId);
                 if (existingOrderRoom) {
-                    return axios.put(`http://localhost:9999/orderRooms/${existingOrderRoom._id}`, { quantity: qty });
+                    return axios.put(`https://server-j956.onrender.com/orderRooms/${existingOrderRoom._id}`, { quantity: qty });
                 } else {
-                    return axios.post('http://localhost:9999/orderRooms', {
+                    return axios.post('https://server-j956.onrender.com/orderRooms', {
                         roomCateId,
                         customerId: cusId,
                         bookingId: bookId,
@@ -242,7 +242,7 @@ const CS3 = () => {
             } else if (qty == 0) {
                 const existingOrderRoom = existingOrderRooms.find(orderRoom => orderRoom.roomCateId._id === roomCateId);
                 if (existingOrderRoom) {
-                    return axios.delete(`http://localhost:9999/orderRooms/${existingOrderRoom._id}`);
+                    return axios.delete(`https://server-j956.onrender.com/orderRooms/${existingOrderRoom._id}`);
                 }
             }
             return null;
