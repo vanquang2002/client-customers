@@ -14,7 +14,7 @@ const PaymentSuccess = () => {
   useEffect(() => {
     const fetchBooking = async () => {
       try {
-        const response = await axios.get(`http://localhost:9999/bookings/${bookingId}`);
+        const response = await axios.get(`https://server-j956.onrender.com/bookings/${bookingId}`);
         setBooking(response.data); // Giả sử response.data chứa thông tin đơn đặt
 
       } catch (error) {
@@ -43,15 +43,15 @@ const PaymentSuccess = () => {
         //   await axios.put(`http://localhost:9999/bookings/${bookingId}`, { payment: booking.price });
         //   setMessage(paymentResponse.data.message || 'Thanh toán được tạo thành công.');
         // } else { setMessage('<h1>Thanh toán được tạo thành công.</h1>'); }
-        const History = await axios.get(`http://localhost:9999/histories/booking/${bookingId}`);
+        const History = await axios.get(`https://client-customers.vercel.app/histories/booking/${bookingId}`);
         if (!History.data.success && History.data.success !== undefined) {
-          await axios.put(`http://localhost:9999/bookings/${bookingId}`, { payment: booking.price });
-          await axios.post('http://localhost:9999/histories/BE', { bookingId: bookingId, note: 'khách hàng đã đặt phòng ' });
+          await axios.put(`https://server-j956.onrender.com/bookings/${bookingId}`, { payment: booking.price });
+          await axios.post('https://server-j956.onrender.com/histories/BE', { bookingId: bookingId, note: 'khách hàng đã đặt phòng ' });
         }
         setMessage('<h1>Thanh toán được tạo thành công.</h1>')
 
         // Xác nhận đặt phòng
-        const response = await axios.get(`http://localhost:9999/payment/payment-success/${booking._id}`);
+        const response = await axios.get(`https://server-j956.onrender.com/payment/payment-success/${booking._id}`);
         setMessageEmail(response.data || 'Thanh toán thành công! Email xác nhận đã được gửi.');
       } catch (error) {
         console.error("Lỗi khi xác nhận đặt phòng hoặc tạo thanh toán:", error.message);
