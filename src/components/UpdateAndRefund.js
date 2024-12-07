@@ -31,9 +31,9 @@ const UpdateAndRefund = forwardRef(({ bookingId }, ref) => {
     const fetchBookingDetails = async () => {
         try {
             const [orderRoomsResponse, orderServiceResponse, roomsResponse] = await Promise.all([
-                axios.get(`http://localhost:9999/orderRooms/booking/${bookingId}`),
-                axios.get(`http://localhost:9999/orderServices/booking/${bookingId}`),
-                axios.get(`http://localhost:9999/rooms/booking/${bookingId}`)
+                axios.get(`https://server-j956.onrender.com/orderRooms/booking/${bookingId}`),
+                axios.get(`https://server-j956.onrender.com/orderServices/booking/${bookingId}`),
+                axios.get(`https://server-j956.onrender.com/rooms/booking/${bookingId}`)
             ]);
             setOrderRooms(orderRoomsResponse.data);
             setOrderServices(orderServiceResponse.data);
@@ -46,9 +46,9 @@ const UpdateAndRefund = forwardRef(({ bookingId }, ref) => {
     // Lấy thông tin vị trí từ ID phòng
     const fetchLocationAndAgency = async (roomCateId, customerId) => {
         try {
-            const locationsResponse = await axios.get(`http://localhost:9999/roomCategories/${roomCateId}`);
+            const locationsResponse = await axios.get(`https://server-j956.onrender.com/roomCategories/${roomCateId}`);
             setLocation(locationsResponse.data.locationId);
-            const AgencyResponse = await axios.get(`http://localhost:9999/agencies/customer/${customerId}`);
+            const AgencyResponse = await axios.get(`https://server-j956.onrender.com/agencies/customer/${customerId}`);
             setAgency(AgencyResponse.data);
         } catch (error) {
             console.error('Error fetching location or agencies details:', error);
@@ -119,12 +119,12 @@ const UpdateAndRefund = forwardRef(({ bookingId }, ref) => {
                 };
 
                 // Cập nhật giá booking và dịch vụ
-                await axios.put(`http://localhost:9999/bookings/${bookingId}`, updatedBookingData);
+                await axios.put(`https://server-j956.onrender.com/bookings/${bookingId}`, updatedBookingData);
 
-                await axios.post('http://localhost:9999/histories/BE', { bookingId: bookingId, staffId: null, note: 'khách đã thêm dịch vụ' });
+                await axios.post('https://server-j956.onrender.com/histories/BE', { bookingId: bookingId, staffId: null, note: 'khách đã thêm dịch vụ' });
                 const newNotification = { content: `${bookingId} khách đã thêm dịch vụ` };
                 axios
-                    .post("http://localhost:9999/chats/send", newNotification)
+                    .post("https://server-j956.onrender.com/chats/send", newNotification)
                     .then((response) => {
                         console.log(response.data);
                     })
@@ -155,7 +155,7 @@ const UpdateAndRefund = forwardRef(({ bookingId }, ref) => {
     const handleRefund = async () => {
         setIsUpdating(true);
         try {
-            await axios.put(`http://localhost:9999/bookings/${bookingId}`, { status: 'Yêu cầu hoàn tiền' });
+            await axios.put(`https://server-j956.onrender.com/bookings/${bookingId}`, { status: 'Yêu cầu hoàn tiền' });
 
             // Cập nhật trạng thái booking
             setOrderRooms((prevOrderRooms) =>
@@ -164,10 +164,10 @@ const UpdateAndRefund = forwardRef(({ bookingId }, ref) => {
                     bookingId: { ...orderRoom.bookingId, status: 'Yêu cầu hoàn tiền' },
                 }))
             );
-            await axios.post('http://localhost:9999/histories/BE', { bookingId: bookingId, staffId: null, note: 'khách đã yêu cầu hủy phòng, hoàn tiền' });
+            await axios.post('https://server-j956.onrender.com/histories/BE', { bookingId: bookingId, staffId: null, note: 'khách đã yêu cầu hủy phòng, hoàn tiền' });
             const newNotification = { content: `${bookingId} khách đã yêu cầu hủy phòng, hoàn tiền` };
             axios
-                .post("http://localhost:9999/chats/send", newNotification)
+                .post("https://server-j956.onrender.com/chats/send", newNotification)
                 .then((response) => {
                     console.log(response.data);
                 })
@@ -244,9 +244,9 @@ const UpdateAndRefund = forwardRef(({ bookingId }, ref) => {
                     const updatedBookingData = {
                         price: orderRooms[0].bookingId.price - price || newBookingPrice,
                     };
-                    await axios.put(`http://localhost:9999/bookings/${bookingId}`, updatedBookingData);
-                    await axios.delete(`http://localhost:9999/orderServices/${deleteService._id}`);
-                    await axios.post('http://localhost:9999/histories/BE', { bookingId: bookingId, staffId: null, note: 'khách đã xóa dịch vụ' });
+                    await axios.put(`https://server-j956.onrender.com/bookings/${bookingId}`, updatedBookingData);
+                    await axios.delete(`https://server-j956.onrender.com/orderServices/${deleteService._id}`);
+                    await axios.post('https://server-j956.onrender.com/histories/BE', { bookingId: bookingId, staffId: null, note: 'khách đã xóa dịch vụ' });
 
                     const newNotification = { content: `${bookingId} khách đã xóa dịch vụ` };
                     axios
@@ -304,15 +304,15 @@ const UpdateAndRefund = forwardRef(({ bookingId }, ref) => {
                     const updatedBookingData = {
                         price: OrderRoom.bookingId.price - price || newBookingPrice,
                     };
-                    await axios.put(`http://localhost:9999/bookings/${bookingId}`, updatedBookingData);
+                    await axios.put(`https://server-j956.onrender.com/bookings/${bookingId}`, updatedBookingData);
 
                     // Gửi yêu cầu API để hủy phòng
-                    await axios.delete(`http://localhost:9999/orderRooms/${OrderRoom._id}`)
-                    await axios.post('http://localhost:9999/histories/BE', { bookingId: bookingId, staffId: null, note: 'khách đã hủy loại phòng' });
+                    await axios.delete(`https://server-j956.onrender.com/orderRooms/${OrderRoom._id}`)
+                    await axios.post('https://server-j956.onrender.com/histories/BE', { bookingId: bookingId, staffId: null, note: 'khách đã hủy loại phòng' });
 
                     const newNotification = { content: `${bookingId} khách đã hủy loại phòng` };
                     axios
-                        .post("http://localhost:9999/chats/send", newNotification)
+                        .post("https://server-j956.onrender.com/chats/send", newNotification)
                         .then((response) => {
                             console.log(response.data);
                         })
@@ -368,13 +368,13 @@ const UpdateAndRefund = forwardRef(({ bookingId }, ref) => {
 
             // Cập nhật giá tổng của booking
             const bookingId = orderRooms[0]?.bookingId?._id;
-            await axios.put(`http://localhost:9999/bookings/${bookingId}`, { price: orderRooms[0].bookingId.price + priceDifference, note: note });
+            await axios.put(`https://server-j956.onrender.com/bookings/${bookingId}`, { price: orderRooms[0].bookingId.price + priceDifference, note: note });
 
-            await axios.post('http://localhost:9999/histories/BE', { bookingId: bookingId, staffId: null, note: 'khách đã cập nhật thông tin phòng' });
+            await axios.post('https://server-j956.onrender.com/histories/BE', { bookingId: bookingId, staffId: null, note: 'khách đã cập nhật thông tin phòng' });
 
             const newNotification = { content: `${bookingId} khách đã cập nhật thông tin phòng` };
             axios
-                .post("http://localhost:9999/chats/send", newNotification)
+                .post("https://server-j956.onrender.com/chats/send", newNotification)
                 .then((response) => {
                     console.log(response.data);
                 })
