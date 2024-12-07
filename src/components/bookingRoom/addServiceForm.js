@@ -19,7 +19,7 @@ const AddServiceForm = forwardRef(({ bookingId, onServiceTotalChange }, ref) => 
     useEffect(() => {
         const fetchOtherServices = async () => {
             try {
-                const response = await axios.get('http://localhost:9999/otherServices');
+                const response = await axios.get('https://server-j956.onrender.com/otherServices');
                 // Lọc và chỉ lấy các dịch vụ chưa bị xóa (isDeleted === false)
                 const filteredServices = response.data
                     .filter(service => !service.isDeleted && service.price !== 1000) // Lọc các dịch vụ chưa bị xóa
