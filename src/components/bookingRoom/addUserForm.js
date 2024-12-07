@@ -149,7 +149,7 @@ const AddUserForm = forwardRef(({ }, ref) => {
 
         try {
             // Create Customer
-            const userResponse = await fetch('http://localhost:9999/customers', {
+            const userResponse = await fetch('https://server-j956.onrender.com/customers', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ const AddUserForm = forwardRef(({ }, ref) => {
                 const agencyPayload = { ...agencyData, customerId: customerID };
 
                 // Create Agency
-                const agencyResponse = await fetch('http://localhost:9999/agencies', {
+                const agencyResponse = await fetch('https://server-j956.onrender.com/agencies', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
