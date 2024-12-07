@@ -9,7 +9,7 @@ const PaymentSuccess = () => {
   useEffect(() => {
     const confirmBooking = async () => {
       try {
-        const response = await fetch(`http://localhost:9999/bookings/payment-success/${id}`);
+        const response = await fetch(`https://server-j956.onrender.com/bookings/payment-success/${id}`);
         const result = await response.text();
         setMessage(result);
       } catch (error) {
