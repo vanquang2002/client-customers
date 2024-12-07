@@ -180,7 +180,7 @@ const AddIdentifyForm = forwardRef(({ }, ref) => {
         }
         try {
             // Send data to the server with the provided `customerID`
-            const response = await fetch('http://localhost:9999/identifycations', {
+            const response = await fetch('https://server-j956.onrender.com/identifycations', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
