@@ -19,7 +19,7 @@ const SelectRoomCategories = forwardRef(({ checkin, checkout, customerID, onQuan
 
     const fetchRoomData = async () => {
         try {
-            const roomCategoriesResponse = await axios.get('http://localhost:9999/roomCategories');
+            const roomCategoriesResponse = await axios.get('https://server-j956.onrender.com/roomCategories');
             const filteredRoomCategories = roomCategoriesResponse.data.filter(room => room.locationId._id === locationId);
             setRoomCategories(filteredRoomCategories);
 
@@ -29,7 +29,7 @@ const SelectRoomCategories = forwardRef(({ checkin, checkout, customerID, onQuan
                 bookedRoomsMap[item.roomCateId] = item.totalRooms;
             });
 
-            const totalRoomsResponse = await axios.get('http://localhost:9999/rooms/category/totals');
+            const totalRoomsResponse = await axios.get('https://server-j956.onrender.com/rooms/category/totals');
             const initialRemainingRooms = {};
             totalRoomsResponse.data.categoryTotals.forEach(room => {
                 const totalRooms = room.totalRooms;
